@@ -2,8 +2,7 @@ name: Upload hub data to a hubverse-hosted AWS S3 bucket
 
 on:
   push:
-    branches:
-      - github.event.respository.default_branch
+    branches: [ "main", "master" ]
 
 env:
   # Hubverse AWS account number
@@ -16,6 +15,8 @@ permissions:
 
 jobs:
   upload:
+    # Don't run on forked repositories
+    if: github.event.repository.fork != true
     runs-on: ubuntu-latest
 
     steps:
