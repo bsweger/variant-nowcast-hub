@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   upload:
-    if: github.repository.fork != true
+    if: ${{ github.repository.fork != true }}
     runs-on: ubuntu-latest
 
     steps:
