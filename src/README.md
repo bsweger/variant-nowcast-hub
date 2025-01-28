@@ -4,8 +4,7 @@
 > **The `src/` directory contains scripts used by hub administrators** and automated jobs.
 > Hub participants and modelers: turn back now. There is nothing for you here but misery.
 
-Details of these scripts can be found below. All of these scripts assume that your working directory is the `src/` directory. To ensure stability, the R scripts manage their dependencies with [the renv R package](https://rstudio.github.io/renv/). The `variant-hub-admin.Rproj` file allows you to open the `src/` folder as an independent R project from the root of this hub. 
-
+Details of these scripts can be found below. All of these scripts assume that your working directory is the `src/` directory. To ensure stability, the R scripts manage their dependencies with [the renv R package](https://rstudio.github.io/renv/). The `variant-hub-admin.Rproj` file allows you to open the `src/` folder as an independent R project from the root of this hub.
 
 The scripts are designed to be run by scheduled GitHub workflows on a Linux-based runner
 (_i.e._, they have not been tested in a Windows environment).
@@ -40,19 +39,18 @@ then appended to the hub's existing `hub-config/tasks.json` file.
 
 To run the script manually (RStudio users):
 
-
 1. Open `src/make_round_config.R` in RStudio _OR_ open the `src/variant-nowcast-hub.Rproj` project in RStudio.
 2. If prompted by `renv` that some of the packages in `renv.lock` are not installed:
 
     ```r
     renv::restore()
     ```
+
 3. Run the make_round_config script:
 
     ```r
     source("make_round_config.R")
     ```
-
 
 To run the script manually (without RStudio):
 
@@ -62,7 +60,8 @@ To run the script manually (without RStudio):
     ```r
     renv::restore()
     ```
-4. Run the make_round_config script:
+
+3. Run the make_round_config script:
 
     ```r
      source("make_round_config.R")
@@ -89,4 +88,3 @@ To run the script manually:
     ```bash
     uv run src/get_location_date_counts.py
     ```
-
