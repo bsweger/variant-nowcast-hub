@@ -1,5 +1,6 @@
 team_name: "UMass Amherst"
 model_version: "1.0"
+modely_model_nickname: "Howdy"
 model_contributors: [
   {
     "name": "Isaac MacArthur",
